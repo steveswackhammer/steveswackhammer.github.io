@@ -465,7 +465,11 @@ template {
  * Base Styles
  */
 html {
-  font-size: 1em; }
+  font-size: 1em;
+  background-color: #30343F; }
+
+.barba-container {
+  background-color: #F7F9F9; }
 
 /*
  * Reduce font-dilation on Mac OS
@@ -545,6 +549,22 @@ img {
 /*
  * Buttons
  */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  background-color: #F2B60C;
+  color: #fff;
+  text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.05);
+  font-family: "tofino_bold", sans-serif;
+  padding: 0.3125rem 0.75rem;
+  border-radius: 0.3125rem;
+  margin-bottom: 1.875rem;
+  font-size: 0.79012em;
+  text-transform: uppercase;
+  letter-spacing: .03em; }
+  .btn:hover {
+    background-color: #e8af0c; }
+
 /*
  * Icons
  */
@@ -919,7 +939,8 @@ h6 {
   .project__list {
     margin: 0;
     padding: 0.46875rem 0;
-    list-style-type: none; }
+    list-style-type: none;
+    font-family: "tofino_book", sans-serif; }
 
 /* Utilities / Helpers */
 /*

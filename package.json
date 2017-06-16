@@ -20,5 +20,6 @@
     "gulp-util": "^3.0.8",
     "jshint": "2.x",
     "jshint-stylish": "^2.2.1"
-  }
+  },
+  "dependencies": {}
 }

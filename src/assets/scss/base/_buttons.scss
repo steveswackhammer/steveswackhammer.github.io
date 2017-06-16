@@ -1,3 +1,22 @@
 /*
  * Buttons
  */
+
+ .btn{
+  text-decoration: none;
+  display: inline-block;
+  background-color: $mikado;
+  color: #fff;
+  text-shadow: -2px 2px 0px rgba(0,0,0, 0.05);
+  font-family: $tfBold;
+  padding: pxrem(5px) pxrem(12px);
+  border-radius: pxrem(5px);
+  margin-bottom: pxrem(30px);
+  font-size: $sz-o;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+
+  &:hover{
+    background-color: darken($mikado, 2%);
+  }
+ }
