@@ -1,5 +1,4 @@
 $(function(){
-  console.log('1');
 
   Barba.Pjax.start();
 

@@ -7,7 +7,10 @@
   padding: pxrem(15px) pxrem(30px);
 
   &__inner{
-    max-width: pxrem(1613px);
+    max-width: pxrem(1400px);
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

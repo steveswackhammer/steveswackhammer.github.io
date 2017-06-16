@@ -757,8 +757,14 @@ h6 {
   border-bottom: 10px solid #30343F;
   padding: 0.9375rem 1.875rem; }
   .page-header__inner {
-    max-width: 100.8125rem;
-    margin: 0 auto; }
+    max-width: 87.5rem;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
 
 /* 
  * Header
@@ -784,6 +790,36 @@ h6 {
 /* 
  * Navigation
  */
+/* 
+ * Social Links
+ */
+.social {
+  width: 12.5rem; }
+  .social__list {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
+  .social__link {
+    text-decoration: none;
+    display: block; }
+    .social__link svg {
+      fill: #A0A2A7; }
+    .social__link--codepen:hover svg {
+      fill: #000; }
+    .social__link--github:hover svg {
+      fill: #4078c0; }
+    .social__link--instagram:hover svg {
+      fill: #E4405F; }
+    .social__link--email:hover svg {
+      fill: #00A676; }
+
 .hero {
   background: linear-gradient(45deg, #00A676, #00A676 33.3%, #45BE9B 100%);
   color: #F7F9F9;
@@ -837,7 +873,7 @@ h6 {
     position: relative;
     box-shadow: inset 0 -2px 0px 0px rgba(0, 0, 0, 0.1); }
     .hero--shallow .hero__inner {
-      max-width: 1613px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 2.8125rem; }
     .hero--shallow .hero__head {

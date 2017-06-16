@@ -1,0 +1,60 @@
+/* 
+ * Social Links
+ */
+
+ .social{
+  width: pxrem(200px);
+
+  &__list{
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item{}
+
+  &__link{
+    text-decoration: none;
+    display: block;
+
+    svg{
+      fill: $silver;
+    }
+
+    &--codepen{
+      &:hover{
+        svg{
+          fill: #000;
+        }
+      }
+    }
+    
+    &--github{
+      &:hover{
+        svg{
+          fill: #4078c0;
+        }
+      }      
+    }
+    
+    &--instagram{
+      &:hover{
+        svg{
+          fill: #E4405F;
+        }
+      }      
+    }
+    
+    &--email{
+      &:hover{
+        svg{
+          fill: $green;
+        }
+      }      
+    }
+  }
+ }
