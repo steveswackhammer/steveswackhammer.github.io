@@ -10,7 +10,7 @@
   }
   
   &__detail{
-    padding: pxrem(15px) pxrem(45px);
+    padding: pxrem(15px) pxrem(30px);
   }
   
   &__title{
@@ -46,6 +46,11 @@
     padding: pxrem(7.5px) 0;
     list-style-type: none;
     font-family: $tfBook;
-    //column-count: 3;
+  }
+
+  @include breakpoint(medium){
+    &__detail{
+      padding: pxrem(15px) pxrem(45px);
+    }
   }
 }

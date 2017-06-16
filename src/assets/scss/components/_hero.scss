@@ -63,7 +63,7 @@
     .hero__inner{
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 pxrem(45px);
+      padding: 0 pxrem(30px);
     }
 
     .hero__head{
@@ -81,6 +81,14 @@
 
     &--shallow{
       padding-left: 0;
+    }
+  }
+
+  @include breakpoint(medium){
+    &--shallow{
+      .hero__inner{
+        padding: 0 pxrem(45px);
+      }
     }
   }
 }

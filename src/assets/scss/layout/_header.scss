@@ -9,8 +9,13 @@
   &__inner{
     max-width: pxrem(1400px);
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+
+  @include breakpoint(small){
+    &__inner{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
