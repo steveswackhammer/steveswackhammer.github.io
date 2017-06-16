@@ -1,0 +1,13 @@
+/* 
+ * Header
+ */
+
+.page-header{
+  border-bottom: 10px solid $gunmetal;
+  padding: pxrem(15px) pxrem(30px);
+
+  &__inner{
+    max-width: pxrem(1613px);
+    margin: 0 auto;
+  }
+}

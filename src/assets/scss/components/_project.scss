@@ -1,0 +1,50 @@
+.project{
+  margin-bottom: pxrem(30px);
+
+  &__img{
+    display: block;
+
+    img{
+      width: 100%;
+    }
+  }
+  
+  &__detail{
+    padding: pxrem(15px) pxrem(45px);
+  }
+  
+  &__title{
+    margin-bottom: 0;
+    font-family: $tfBold;
+
+    a{
+      text-decoration: none;
+    }
+
+    sup{
+      font-size: .15em;
+      top: -1.3em;
+    }
+  }
+  
+  &__meta{
+    font-family: $tfMed;
+    font-size: $sz-o;
+    margin-bottom: pxrem(15px);
+  }
+
+  &__subhead{
+    font-size: $sz-m;
+    font-family: $tfBold;
+    text-transform: uppercase;
+    padding-bottom: pxrem(3.75px);
+    border-bottom: 1px solid $gunmetal;
+  }
+
+  &__list{
+    margin: 0;
+    padding: pxrem(7.5px) 0;
+    list-style-type: none;
+    //column-count: 3;
+  }
+}

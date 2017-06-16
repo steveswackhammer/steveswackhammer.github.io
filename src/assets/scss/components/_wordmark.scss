@@ -1,0 +1,25 @@
+.wordmark{
+  font-family: $tfBlackItal;
+  font-size: $sz-i;
+  font-weight: normal;
+  line-height: 1;
+
+  a{
+    text-decoration: none;
+  }
+
+  span{
+    display: block;
+  }
+
+  &__last{
+    text-indent: .47em;
+  }
+
+  &__title{
+    display: block;
+    font-family: $tfBook;
+    font-size: .47em;
+    text-indent: 1em;
+  }
+}

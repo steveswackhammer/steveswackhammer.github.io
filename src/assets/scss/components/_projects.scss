@@ -1,0 +1,77 @@
+.projects{
+  padding: pxrem(30px);
+
+  &__intro{
+    margin-bottom: pxrem(30px);
+
+    p{
+      margin-bottom: .4em;
+      line-height: 1.4;
+    }
+
+    &__content{
+      font-size: $sz-h;
+    }
+
+    &__disclaimer{
+      font-size: $sz-n;
+      font-family: $tfBook;
+
+
+      b{
+        font-size: $sz-n;
+        font-family: $tfMed;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__list{
+    list-style-type: none;
+    margin: 0 pxrem(-30px);
+    padding: 0;
+  }
+
+  @include breakpoint(medium){
+    &__intro{
+      margin-bottom: pxrem(15px);
+      display: flex;
+      justify-content: space-between;
+
+      &__content{
+        width: 40%;
+        padding-left: pxrem(15px);
+      }
+
+      &__disclaimer{
+        width: 50%;
+        padding-left: pxrem(7.5px);
+        align-self: baseline;
+      }
+    }
+
+    &__list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 15px;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  @include breakpoint(large){
+    &__list{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      li:nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      li:nth-child(2){
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+    }
+  }
+}
