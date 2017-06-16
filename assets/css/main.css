@@ -755,16 +755,19 @@ h6 {
  */
 .page-header {
   border-bottom: 10px solid #30343F;
-  padding: 0.9375rem 1.875rem; }
+  padding: 0.9375rem 1.875rem;
+  /* 600px */ }
   .page-header__inner {
     max-width: 87.5rem;
-    margin: 0 auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-align: center;
-        align-items: center; }
+    margin: 0 auto; }
+  @media (min-width: 37.5em) {
+    .page-header__inner {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      -ms-flex-align: center;
+          align-items: center; } }
 
 /* 
  * Header
@@ -794,12 +797,12 @@ h6 {
  * Social Links
  */
 .social {
-  width: 12.5rem; }
+  /* 600px */ }
   .social__list {
     width: 100%;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0.9375rem 0;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -819,6 +822,11 @@ h6 {
       fill: #E4405F; }
     .social__link--email:hover svg {
       fill: #00A676; }
+  @media (min-width: 37.5em) {
+    .social {
+      width: 12.5rem; }
+      .social__list {
+        padding: 0; } }
 
 .hero {
   background: linear-gradient(45deg, #00A676, #00A676 33.3%, #45BE9B 100%);
@@ -832,7 +840,8 @@ h6 {
   -ms-flex-pack: center;
       justify-content: center;
   position: relative;
-  /* 600px */ }
+  /* 600px */
+  /* 768px */ }
   .hero:before {
     content: '';
     position: absolute;
@@ -875,7 +884,7 @@ h6 {
     .hero--shallow .hero__inner {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2.8125rem; }
+      padding: 0 1.875rem; }
     .hero--shallow .hero__head {
       margin: 0;
       font-family: "tofino_black_italic", sans-serif; }
@@ -886,6 +895,9 @@ h6 {
       padding-left: 42%; }
       .hero--shallow {
         padding-left: 0; } }
+  @media (min-width: 48em) {
+    .hero--shallow .hero__inner {
+      padding: 0 2.8125rem; } }
 
 .projects {
   padding: 1.875rem;
@@ -947,13 +959,14 @@ h6 {
         grid-column-end: 5; } }
 
 .project {
-  margin-bottom: 1.875rem; }
+  margin-bottom: 1.875rem;
+  /* 768px */ }
   .project__img {
     display: block; }
     .project__img img {
       width: 100%; }
   .project__detail {
-    padding: 0.9375rem 2.8125rem; }
+    padding: 0.9375rem 1.875rem; }
   .project__title {
     margin-bottom: 0;
     font-family: "tofino_bold", sans-serif; }
@@ -977,6 +990,9 @@ h6 {
     padding: 0.46875rem 0;
     list-style-type: none;
     font-family: "tofino_book", sans-serif; }
+  @media (min-width: 48em) {
+    .project__detail {
+      padding: 0.9375rem 2.8125rem; } }
 
 /* Utilities / Helpers */
 /*
