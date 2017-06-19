@@ -42,13 +42,14 @@
     a{
       color: $ghost;
       text-decoration: none;
-      display: inline-block;
       background-color: transparentize($viridian, .35);
-      padding: 0 5px;
-      margin: 0 -5px;
+      box-shadow:5px 0 0 transparentize($viridian, .35), -5px 0 0 transparentize($viridian, .35);
+      padding: pxrem(2.5px) 0;
+      margin: 0 1px;
 
       &:hover{
         background-color: transparentize($viridian, .1);
+        box-shadow:5px 0 0 transparentize($viridian, .1), -5px 0 0 transparentize($viridian, .1);
       }
     }
   }
