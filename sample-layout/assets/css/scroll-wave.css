@@ -1,0 +1,50 @@
+.scroll-wave {
+	--wave-height: 30px;
+	--wave-space: 7px;
+	--bg-color: #FFF;
+	--secondary-wave-color: var(--purple-dark);
+	
+	height: calc(var(--wave-height) * 3);
+	position: relative;
+	width: 100vw;
+	background-color: var(--bg-color);
+	overflow: hidden;
+}
+
+.scroll-wave::after, 
+.scroll-wave__inner::before, 
+.scroll-wave__inner::after {
+	content: '';
+	position: absolute;
+	width: 10000vw;
+	height: var(--wave-height);
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160.33%2065.63%22%3E%3Cpath%20d%3D%22m160.33%2C50.65c-9.95.14-19.81-3.3-26.83-10.26-7.02-6.95-13.08-14.86-19.52-22.39-6.07-7.1-12.92-13.09-22.05-15.94-16.8-5.23-33.07-.39-44.24%2C13.19-6.15%2C7.47-12.03%2C15.18-18.45%2C22.41-3.61%2C4.06-14.63%2C12.8-29.24%2C12.95v15.02h160.33v-14.98Z%22%20fill%3D%22%235757ff%22%2F%3E%3C%2Fsvg%3E');
+	background-size: auto calc(var(--wave-height) - var(--wave-space));
+	background-position: center bottom;
+	background-repeat: repeat-x;
+	translate: calc(-10vw - var(--scroll)) 0;
+	left: 0;
+}
+
+.scroll-wave__inner::before,
+.scroll-wave__inner::after {
+	background-color: var(--secondary-wave-color);
+}
+
+.scroll-wave__inner::before {
+	top: var(--wave-height);
+	left: auto;
+	right: 0;
+	translate: calc(10vw + var(--scroll)) 0;
+}
+
+.scroll-wave__inner::after {
+	top: calc(var(--wave-height) * 2);
+}
+
+@media (min-width: 768px) {
+	.scroll-wave {
+		--wave-height: 67px;
+		--wave-space: 11px;
+	}
+}

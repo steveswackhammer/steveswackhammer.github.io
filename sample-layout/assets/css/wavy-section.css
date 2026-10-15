@@ -1,0 +1,56 @@
+.wavy-section {
+	--bg-color: #f8f2df;
+
+	position: relative;
+	top: 1px;
+	overflow: visible;
+	background-image: linear-gradient(to bottom, transparent, transparent 10vw, var(--bg-color) 10vw);
+}
+
+.wavy-section:has(.js-wave-primary) {
+	background-image: linear-gradient(to bottom, transparent, transparent 12vw, var(--bg-color) 12vw);
+}
+
+/* Wave
+   -------------------------------------------------------------------------- */
+.wavy-section__wave {
+	height: 0;
+	margin-top: -10vw;
+	padding-bottom: 10vw;
+	position: relative;
+	z-index: 10;
+}
+
+.wavy-section__wave:has(.js-wave-primary) {
+	margin-top: -12vw;
+	padding-bottom: 12vw;
+}
+
+.wavy-section__wave svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	fill: var(--bg-color);
+}
+
+.wavy-section__wave svg path.js-wave-primary {
+	transform: translateX(-20%);
+	transition: transform 1.25s cubic-bezier(0, .55, .45, 1) .2s;
+}
+
+.wavy-section__wave svg path.js-wave-primary.is-animated {
+	transform: translateX(0);
+}
+
+.wavy-section__wave + .wavy-text {
+	transform: translateY(-50%);
+}
+
+/* Content
+   -------------------------------------------------------------------------- */
+.wavy-section > *:not(.wavy-section__wave) {
+	position: relative;
+	z-index: 15;
+}

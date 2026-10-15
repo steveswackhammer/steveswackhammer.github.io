@@ -1,0 +1,112 @@
+body { 
+	color: var(--purple-dark);
+	font-family: "Mulish", sans-serif;
+	font-size: 1em; 
+	line-height: 1.5625;
+	font-weight: 400;
+	font-style: normal;
+  overflow-wrap: break-word;	
+}
+
+h1,
+.font-h1 {
+	font-family: "Mulish", sans-serif;
+	font-size: 48px;
+	font-weight: 1000;
+	line-height: 1.16666667;
+	letter-spacing: -.01em;
+}
+
+
+@media (min-width: 960px) { 
+	h1,
+	.font-h1 {
+		font-size: 66px;
+		line-height: 1.12121212;
+	}
+}
+
+h2,
+.font-h2 {
+	font-family: "Mulish", sans-serif;
+	font-size: 40px;
+	font-weight: 850;
+	letter-spacing: -.01em;
+	line-height: 1.2;
+}
+
+@media (min-width: 960px) { 
+	h2,
+	.font-h2 {
+		font-size: 54px;
+		line-height: 1.14814815;
+	}
+}
+
+h3,
+.font-h3 {
+	font-family: "Mulish", sans-serif;
+	font-size: 36px;
+	font-weight: 800;
+	letter-spacing: -.01em;
+	line-height: 1.22222222;
+}
+
+@media (min-width: 960px) { 
+	h3,
+	.font-h3 {
+		font-size: 46px;
+		line-height: 1.17391304;
+	}
+}
+
+h4,
+.font-h4 {
+	font-family: "Mulish", sans-serif;
+	font-size: 32px;
+	font-weight: 800;
+	letter-spacing: -.01em;
+	line-height: 1.25;
+}
+
+@media (min-width: 960px) { 
+	h4,
+	.font-h4 {
+		font-size: 38px;
+		line-height: 1.21052632;
+	}
+}
+
+h5,
+.font-h5 {
+	font-family: "Mulish", sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	letter-spacing: -.01em;
+	line-height: 1.23076923;
+}
+
+@media (min-width: 960px) { 
+	h5,
+	.font-h5 {
+		font-size: 32px;
+		line-height: 1.25;
+	}
+}
+
+h6,
+.font-h6 {
+	font-family: "Mulish", sans-serif;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: -.01em;
+	line-height: 1.27272727;
+}
+
+@media (min-width: 960px) { 
+	h6,
+	.font-h6 {
+		font-size: 28px;
+		line-height: 1.21428571;
+	}
+}

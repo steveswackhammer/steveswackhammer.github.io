@@ -1,0 +1,116 @@
+.media-reveal {
+	--copy-size: 18px;
+	padding-top: 0;
+	padding-bottom: 100px;
+	overflow: hidden;
+}
+
+/* Layout
+   -------------------------------------------------------------------------- */
+.media-reveal__inner {
+	display: flex;
+	align-items: flex-start;
+	max-width: 955px;
+	margin: 0 auto;
+	padding-left: var(--column-gutter);
+	padding-right: var(--column-gutter);
+	flex-direction: column;
+}
+
+.media-reveal__inner > * {
+	width: 100%;
+}
+
+.media-reveal--full-width .media-reveal__inner {
+	padding-left: 0;
+	padding-right: 0;
+	max-width: none;
+}
+
+/* Detail / Card
+   -------------------------------------------------------------------------- */
+.media-reveal__detail {
+	display: flex;
+	gap: var(--column-gutter);
+	justify-content: center;
+	z-index: 40;
+}
+
+.media-reveal--align-top .media-reveal__detail {
+	align-self: flex-start;
+}
+
+.media-reveal--full-width .media-reveal__detail {
+	padding-left: var(--column-gutter);
+	padding-right: var(--column-gutter);
+}
+
+.media-reveal__card {
+	padding: 40px 0;
+	text-align: center;
+	display: inline-block;
+}
+
+/* Heading / Content / Actions
+   -------------------------------------------------------------------------- */
+.media-reveal__hed {
+	margin-bottom: 1rem;
+}
+
+.media-reveal__content p {
+	font-size: var(--copy-size);
+}
+
+.media-reveal__actions {
+	margin-top: 30px;
+}
+
+/* Media
+   -------------------------------------------------------------------------- */
+.media-reveal__media {
+	margin-inline: auto;
+	position: relative;
+	z-index: 45;
+	
+	/* Bleeds past the gutters on small screens */
+	width: calc(100% + (var(--column-gutter) * 2));
+	margin-left: calc(0px - var(--column-gutter));
+}
+
+.media-reveal__media .frame {
+	--w: 800;
+	--h: 800;
+}
+
+.media-reveal__media > * {
+	transition: all 1s ease-out;
+	display: flex;
+	justify-content: center;
+}
+
+@media (min-width: 1024px) { /* TODO: $bp-lrg */
+	.media-reveal {
+		--copy-size: 20px;
+		--copy-size-sm: 16px;
+
+		padding-top: 80px;
+		padding-bottom: 200px;
+	}
+
+	.media-reveal__card {
+		padding: 40px;
+	}
+
+	.media-reveal__detail {
+		padding-top: unset;
+	}
+
+	.media-reveal__media {
+		width: 100%;
+		margin-left: unset;
+	}
+
+	.media-reveal--flip .media-reveal__media {
+		order: -1;
+	}
+}

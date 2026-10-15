@@ -1,0 +1,114 @@
+/* Base button
+   -------------------------------------------------------------------------- */
+button,
+.btn {
+	--btn-bg: var(--purple-dark);
+	--btn-color: var(--cream);
+	--btn-bg-hover: var(--purple);
+	--btn-color-hover: var(--cream);
+	--btn-bg-focus: var(--btn-bg-hover);
+	--btn-color-focus: var(--btn-color-hover);
+
+	-webkit-appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	padding: 20px 60px 20px;
+	background-color: var(--btn-bg);
+	color: var(--btn-color);
+	font-family: "Mulish", sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 1;
+	border: none;
+	border-radius: 100px;
+	transition: background-color var(--transition-time) ease,
+				color var(--transition-time) ease;
+	margin: 0 0 .75em;
+	white-space: nowrap;
+	 width: 100%; 
+}
+
+button:hover,
+button:active,
+.btn:hover,
+.btn:active {
+	background-color: var(--btn-bg-hover);
+	color: var(--btn-color-hover);
+}
+
+button:focus,
+.btn:focus {
+	background-color: var(--btn-bg-focus);
+	color: var(--btn-color-focus);
+}
+
+@media (min-width: 550px) {
+	button,
+	.btn {
+		width: auto;
+	}
+}
+
+@media (min-width: 1024px) {
+	button,
+	.btn {
+		font-size: 22px;
+	}
+}
+
+/* Filter button
+   -------------------------------------------------------------------------- */
+.btn-filter {
+	display: inline-flex;
+	justify-content: center;
+	align-items: baseline;
+	gap: 6px;
+	text-align: center;
+	text-decoration: none;
+	font-family: "Mulish", sans-serif;
+	font-weight: 650;
+	background-color: transparent;
+	transition: all var(--transition-time) ease-out;
+	border: 2px solid var(--purple-dark);
+	padding: 10px 16px;
+	color: var(--purple-dark);
+	font-size: 16px;
+	line-height: 1;
+	margin: 0;
+	white-space: nowrap;
+	width: auto;
+}
+
+.btn-filter--toggle::before {
+	content: '';
+	background-color: currentColor;
+	-webkit-mask-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2025%22%3E%3Cpolygon%20points%3D%2225%2010.94%2014.06%2010.94%2014.06%200%2010.94%200%2010.94%2010.94%200%2010.94%200%2014.06%2010.94%2014.06%2010.94%2025%2014.06%2025%2014.06%2014.06%2025%2014.06%2025%2010.94%22%20%2F%3E%3C%2Fsvg%3E');
+	-webkit-mask-size: 12px 12px;
+	-webkit-mask-repeat: no-repeat;
+	mask-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2025%22%3E%3Cpolygon%20points%3D%2225%2010.94%2014.06%2010.94%2014.06%200%2010.94%200%2010.94%2010.94%200%2010.94%200%2014.06%2010.94%2014.06%2010.94%2025%2014.06%2025%2014.06%2014.06%2025%2014.06%2025%2010.94%22%20%2F%3E%3C%2Fsvg%3E');
+	mask-size: 12px 12px;
+	mask-repeat: no-repeat;
+	width: 12px;
+	height: 12px;
+	transition: all var(--transition-time) ease-out;
+}
+
+.btn-filter:hover,
+.btn-filter.filter-active,
+.btn-filter:focus.filter-active {
+	color: var(--cream);
+	background-color: var(--purple-dark);
+}
+
+.btn-filter:focus-visible {
+	background-color: transparent;
+	color: var(--purple-dark);
+	box-shadow: 0 0 0 3px var(--purple);
+}
+
+.btn-filter.filter-active::before {
+	transform: rotate(45deg);
+}
