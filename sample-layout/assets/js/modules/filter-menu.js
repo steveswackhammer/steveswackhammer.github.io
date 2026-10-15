@@ -25,6 +25,7 @@ const filterMenu = {
 	state: {
 		selectedSubfilters: {},
 		scrollPosition: 0,
+		scrollAfterClose: false,
 	},
 
 	init() {
@@ -66,6 +67,16 @@ const filterMenu = {
 		filterMenu.config.mq.addEventListener('change', filterMenu.manageFilterMenu);
 	},
 
+	isOverlayOpen() {
+		return !!document.querySelector('.js-subfilters-menu.' + filterMenu.config.menuVisibilityClass);
+	},
+
+	scrollToFilters($target) {
+		if (!$target) return;
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		$target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+	},
+
 	/**
 	 * Run DOM update inside a View Transition (when supported)
 	 */
@@ -99,16 +110,19 @@ const filterMenu = {
 
 	handleChange(value, $item, panel, title, eventType = 'click') {
 		const $menu = $item.closest('[' + filterMenu.config.menu + ']');
-		const $panelTitle = $menu.querySelector(title);
+		const overlayOpen = filterMenu.isOverlayOpen();
 
 		filterMenu.transition(() => {
 			filterMenu.applyChange(value, $item, panel, title, eventType);
 			filterMenu.announceResults();
 		}).then(() => {
 
-			if ($panelTitle) {
-				$panelTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			if (overlayOpen) {
+				filterMenu.state.scrollAfterClose = true;
+				return;
 			}
+
+			filterMenu.scrollToFilters($menu.querySelector(title));
 		});
 	},
 
@@ -361,7 +375,14 @@ const filterMenu = {
 		document.querySelectorAll('.js-filters-menu-trigger, .js-subfilters-menu-trigger').forEach(($el) => {
 			$el.setAttribute('aria-expanded', 'false');
 		});
-		document.querySelector('.js-filters-menu-trigger')?.focus({ preventScroll: true });
+		
+		const $trigger = document.querySelector('.js-filters-menu-trigger');
+		$trigger?.focus({ preventScroll: true });
+
+		if (filterMenu.state.scrollAfterClose && filterMenu.config.mq.matches) {
+			filterMenu.scrollToFilters($trigger);
+		}
+		filterMenu.state.scrollAfterClose = false;
 	},
 
 	showMenu() {
